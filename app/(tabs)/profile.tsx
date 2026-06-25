@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, View, Alert, Image } from 'react-native';
+import { StyleSheet, ScrollView, View, Alert, Image, Linking } from 'react-native';
 import { Title, Text, Card, List, Switch, Button, Divider, useTheme, Avatar } from 'react-native-paper';
 import { useAppTheme } from '@/utils/ThemeContext';
 import * as FileSystem from 'expo-file-system';
@@ -40,6 +40,10 @@ export default function ProfileScreen() {
       Alert.alert('Export Failed', 'An error occurred while exporting data.');
       console.error(error);
     }
+  };
+
+  const handleUpgrade = () => {
+    Linking.openURL('https://buy.stripe.com/3cI28r7zC4TodTU9krdQQ00');
   };
 
   const isDark = themeMode === 'dark';
